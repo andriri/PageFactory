@@ -32,6 +32,8 @@ public class GitResetCommands {
 	 * b> push the change to remote which will delete the commit also from remote
 	 * 		git push origin +HEAD
 	 * 
+	 * 6.delete commit from remote only(keep on local)
+	 * 		git push origin +HEAD^:master
 	 * 
 	 * 
 	 * git reset - muta dintr-un loc in altul
