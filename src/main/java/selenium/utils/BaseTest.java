@@ -43,9 +43,9 @@ public class BaseTest {
 		
 		
 	}
-	//@AfterClass
+	@AfterClass
 	public void tearDown() throws InterruptedException {
-		Thread.sleep(5000); //lasa browserul deschis 5000 secunde
+		Thread.sleep(5000); //lasa browserul deschis 5 secunde
 		driver.quit(); //inchide toate taburile
 		//driver.close();//inchide tabul curent
 	}
