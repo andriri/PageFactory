@@ -8,11 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import selenium.utils.SeleniumWrappers;
 
-public class MyAccountPage  extends SeleniumWrappers{
-	
-	
+public class MyAccountPage extends SeleniumWrappers{
+
 	public MyAccountPage(WebDriver driver) {
-		
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
@@ -27,22 +25,19 @@ public class MyAccountPage  extends SeleniumWrappers{
 	@FindBy(css = "button[name='login']")
 	public WebElement loginBtn;
 	
-	@FindBy(xpath = "//div[@class='woocommerce-MyAccount-content']");
-	public WebElement loginBtn;
+	@FindBy(xpath = "//div[@class='woocommerce-MyAccount-content']")
+	public WebElement myAccountContent;
+	
+	@FindBy(linkText = "Log out")
+	public WebElement logoutBtn;
+	
 	
 	public void loginInApp(String username, String password) {
 		
-		//putem declara si aici elementele, dar e mai logic sa le punem in SeleniumWrappers
-		// deoarece refolosim obiectele si tot ce include clasa respectiva
-		
-		//WebDriverWait.class.
-		//userField.clear();
-		//userField.sendKeys(username);
-		
 		sendKeys(userField, username);
-		sendKeys(userField, password);
+		sendKeys(passField, password);
 		click(loginBtn);
-		
+
 	}
 	
 }

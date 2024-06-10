@@ -31,16 +31,16 @@ public class BaseTest {
 	public WebDriver driver; //am importat WebDriver
 
 	
-	@Parameters({"url"})
+	//@Parameters({"url"})
 	@BeforeClass
-	public void setup(String appUrl) { //deschide browserul si navigheaza catre pagina noastra
+	public void setup() { //deschide browserul si navigheaza catre pagina noastra
 		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize(); //mereu pornim pagina web pe pagina maximizata
 											 //pentru a gasi toate butoanele cu locatorii (e diferit pe telefon vs monitor)
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get(appUrl);
-		
+		//driver.get(appUrl);
+		driver.get("https://keyfood.ro/");
 		
 	}
 	@AfterClass
